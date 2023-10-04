@@ -1,0 +1,282 @@
+<html lang="en">
+<head>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Users/roibenita/Documents/second_degree/research/Github_files/GitIO/styles.css">
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
+
+</head>
+<body>
+    
+    <div class = "header_div">
+        <br><br><br>
+    <h1 class = "Head_h1"> DiffAR: Denoising Diffusion Autoregressive Model for Raw Speech Waveform Generation</h1>
+    </div>
+
+    <div class = "body_div">
+        <p class = "Head_h2">Abstract: Diffusion models have recently been shown to be relevant for high-quality speech generation. Most work has been focused on generating spectrograms, and as such, they further require a subsequent model to convert the spectrogram to a waveform (i.e., a vocoder). This work proposes a diffusion probabilistic end-to-end model for generating a raw speech waveform. The proposed model is autoregressive, generating overlapping frames sequentially, where each frame is conditioned on a portion of the previously generated one. Hence, our model can effectively synthesize an unlimited speech duration while preserving high-fidelity synthesis and temporal coherence. We implemented the proposed model for unconditional and conditional speech generation, where the latter can be driven by an input sequence of phonemes, amplitudes, and pitch values. Working on the waveform directly has some empirical advantages. Specifically, it allows the creation of local acoustic behaviors, like vocal fry, which makes the overall waveform sounds more natural. Furthermore, the proposed diffusion model is stochastic and not deterministic; therefore, each inference generates a slightly different waveform variation, enabling abundance of valid realizations. Experiments show that the proposed model generates speech with superior quality compared with other state-of-the-art neural speech generation systems.
+        </p> 
+                <!-- ###############Unconditional generation################ -->
+
+        <h3 class = "Body_h3"> <u><b>Unconditional generation </b></u></h3>
+        <!-- <br> -->
+        <table class = "general_table" >
+            <tr class= "table_lines">
+                <td style="width:20%"> \[\left(L,L_0\right)\]</td>
+                <td style="width:26%"></td>
+                <td style="width:26%"></td>
+                <td style="width:26%"></td>
+            </tr>
+            <tr class= "table_lines">  
+                <td  style="width:20%">\[
+                \left(400,200\right)
+                \] </td>
+                <td style="width:26%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Unconditional_generation/unconditioanl_gen_400ms_200ms_2.wav"></audio>
+                </td>
+                <td style="width:26%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Unconditional_generation/unconditioanl_gen_400ms_200ms_3.wav"></audio>
+                </td>
+                <td style="width:26%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Unconditional_generation/unconditioanl_gen_400ms_200ms_4.wav"></audio>
+                </td>
+            </tr>
+            <tr  class= "table_lines">
+                <td  style="width:10%"> \[
+                    \left(500,250\right)
+                    \] </td>
+                    <td style="width:26%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Unconditional_generation/unconditioanl_gen_500ms_250ms_0.wav"></audio>
+                    </td>
+                    <td style="width:26%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Unconditional_generation/unconditioanl_gen_500ms_250ms_2.wav"></audio>
+                    </td>
+                    <td style="width:26%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Unconditional_generation/unconditioanl_gen_500ms_250ms_4.wav"></audio>
+                    </td>
+            </tr>
+            <tr class= "table_lines" >
+                <td style="width:10%">\[
+                    \left(1000,500\right)
+                    \] </td>
+                    <td style="width:26%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Unconditional_generation/unconditioanl_gen_1s_500ms_0.wav"></audio>
+                    </td>
+                    <td style="width:26%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Unconditional_generation/unconditioanl_gen_1s_500ms_1.wav"></audio>
+                    </td>
+                    <td style="width:26%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Unconditional_generation/unconditioanl_gen_1s_500ms_3.wav"></audio>
+                    </td>
+            </tr>
+        </table>
+        <!-- ############################### -->
+
+
+        <!-- ###############Conditional generation################ -->
+
+        <h3 class = "Body_h3"> <u><b>Conditional generation </b></u></h3>
+        <!-- <br> -->
+        <table class = "general_table" >
+            <tr class= "table_lines">
+                <td style="width:10%">  </td>
+                <td style="width:20%">Personal relations</td>
+                <td style="width:20%">An examination of certain construction work appearing in the background of this photograph revealed that the picture was taken between March 8</td>
+                <td style="width:20%">Who was bound to report any deficiencies and abuses he might find at his periodical visits. The Secretary of State might go further.</td>
+                <td style="width:20%">At the last interrogation in November Oswald admitted to Postal Inspector Holmes that he had rented post office box 2915 Dallas</td>
+            </tr>
+            <tr class= "table_lines">
+                <td  style="width:10%">\[
+                {WaveGrad 2}
+                \] </td>
+                <td style="width:20%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/WaveGrad_LJ043-0004_0.wav"></audio>
+                </td>
+                <td style="width:20%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/WaveGrad_LJ038-0242_0.wav"></audio>
+                </td>
+                <td style="width:20%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/WaveGrad_LJ019-0361_0.wav"></audio>
+                </td>
+                <td style="width:20%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/WaveGrad_LJ038-0126_0.wav"></audio>
+                </td>
+            </tr>
+            <tr class= "table_lines">
+                <td  style="width:10%"> \[
+                    {FastSpeech 2}
+                    \] </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/FastSpeech_LJ043-0004_900k_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/FastSpeech_LJ038-0242_900k_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/FastSpeech_LJ019-0361_900k_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/FastSpeech_LJ038-0126_900k_0.wav"></audio>
+                    </td>
+            </tr>
+            <tr class= "table_lines">
+                <td style="width:10%">\[
+                    {DiffAR \left( 200 \right)}
+                    \] </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/C2_predicted_LJ043-0004_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/C2_predicted_LJ038-0242_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/C2_predicted_LJ019-0361_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/C2_predicted_LJ038-0126_0.wav"></audio>
+                    </td>
+            </tr>
+            <tr class= "table_lines">
+                <td style="width:10%">\[
+                    {DiffAR \left( 1000 \right)}
+                    \] </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/D2_predicted_LJ043-0004_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/D2_predicted_LJ038-0242_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/D2_predicted_LJ019-0361_0wav.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src=" https://github.com/RBenita/DIFFAR/raw/main/Examples/Conditional_generation/D2_predicted_LJ038-0126_0.wav"></audio>
+                    </td>
+            </tr>
+        </table>
+        <!-- ############################### -->
+
+
+
+        <!-- ###############Ablation Study################ -->
+
+        <h3 class = "Body_h3"> <u><b>Ablation Study </b></u></h3>
+        <!-- <br> -->
+        <table class = "general_table" >
+            <tr class= "table_lines">
+                <td style="width:10%">  </td>
+                <td style="width:20%">and the general insufficiency was such</td>
+                <td style="width:20%">Boxes and cases were stacked behind him.|Boxes and cases were stacked behind him.</td>
+                <td style="width:20%">which had come to rest on a stack of paper.</td>
+                <td style="width:20%">which carry the major responsibility for supplying information about potential threats</td>
+            </tr>
+            <tr class= "table_lines">  
+                <td  style="width:10%">\[
+                {Ground truth}
+                \] </td>
+                <td style="width:20%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/LJ003-0228.wav"></audio>
+                </td>
+                <td style="width:20%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/LJ034-0183.wav"></audio>
+                </td>
+                <td style="width:20%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/LJ038-0257.wav"></audio>
+                </td>
+                <td style="width:20%">
+                    <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/LJ050-0116.wav"></audio>
+                </td>
+            </tr>
+            <tr class= "table_lines">
+                <td   style="width:10%"> \[
+                    {DiffAR-E \left( 200 \right)}
+                    \] </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/DiffAR-E_LJ003-0228_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/DiffAR-E_LJ034-0183_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/DiffAR-E_LJ038-0257_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/DiffAR-E_LJ050-0116_0.wav"></audio>
+                    </td>
+            </tr>
+            <tr class= "table_lines" >
+                <td style="width:10%">\[
+                    {DiffAR \left( 200 \right)}
+                    \] </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/C2_LJ003-0228_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/C2_LJ034-0183_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/C2_LJ038-0257_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/C2_LJ050-0116_0.wav"></audio>
+                    </td>
+            </tr>
+            <tr class= "table_lines">
+                <td style="width:10%">\[
+                    {DiffAR \left( 1000 \right)}
+                    \] </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/D2_LJ003-0228_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/D2_LJ034-0183_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/D2_LJ038-0257_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/D2_LJ050-0116_0.wav"></audio>
+                    </td>
+            </tr>
+            <tr class= "table_lines">
+                <td  style="width:10%"> \[
+                    {DiffAR+P \left( 200 \right)}
+                    \] </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/main/DiffAR%2BP_LJ003-0228_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/"DiffAR%2BP_LJ034-0183_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/DiffAR%2BP_LJ038-0257_0.wav"></audio>
+                    </td>
+                    <td style="width:20%">
+                        <audio controls="" src="https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/DiffAR%2BP_LJ050-0116_0.wav"></audio>
+                    </td>
+            </tr>
+        </table>
+        <!-- ############################### -->
+
+
+
+
+    </div>
+    <script type="text/javascript">
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,131 @@
+/* body {
+    background-color: rgb(151, 220, 162);
+  } */
+/* h1 {
+color: rgb(123, 210, 222);
+font-family: 'Roboto', sans-serif;  } */
+@font-face {
+    font-family: 'mono-spaced';
+    src: url('/Users/roibenita/Documents/second_degree/research/Github_files/GitIO/ttf_font_files/SpaceMono-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'halvetica';
+    src: url('/Users/roibenita/Documents/second_degree/research/Github_files/GitIO/ttf_font_files/Helvetica CE Narrow.woff') format('woff');
+}
+
+html, body { 
+    padding:0;
+    margin:0;
+    text-align:center;
+    
+}
+p {
+color: rgb(9, 16, 115);
+margin: 0;
+padding:0;
+
+}
+
+.Head_h1 {
+    color: rgb(255, 255, 255);
+    font-family: 'mono-spaced', sans-serif ;
+    /* font-family: 'halvetica', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-size: 25px;
+    margin: 0;
+    padding:0;
+}
+
+.Head_h2 {
+    /* color: rgb(255, 255, 255); */
+    color: rgb(3, 14, 118);
+    
+    font-family: 'mono-spaced', sans-serif;
+    /* font-family: 'halvetica', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: sans-serif; */
+    font-size: 15px;
+    /* margin: 0; */
+    /* padding:0; */
+    padding:20px;
+    margin: 20px;
+}
+
+.header_div
+{
+float: left;
+background-color:rgb(221, 213, 158);
+height: 160px;
+width: 100%;
+/* margin:0; */
+/* padding:0; */
+
+margin: 0px;
+padding:0px;
+align-items: right;
+
+}
+
+.body_div
+{
+float: left;
+/* background-color:rgb(234, 217, 230); */
+background-color:rgb(244, 245, 228);
+
+/* height: 80%; */
+width: 100%;
+/* margin:0; */
+/* padding:0; */
+margin: 0px;
+padding:0px;
+text-align:left;
+}
+
+.Body_h3 {
+    /* color: rgb(255, 255, 255); */
+    color: rgb(3, 14, 118);
+    font-family: 'mono-spaced', sans-serif;
+
+    /* font-family: 'Roboto', sans-serif; */
+    font-size: 20px;
+    /* margin: 0; */
+    /* padding:0; */
+    /* padding:40px; */
+    margin: 40px;
+}
+
+.general_table {
+    color: rgb(255, 255, 255);
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'mono-spaced', sans-serif;
+
+    font-size: 20px;
+    /* margin: 0; */
+    /* padding:0; */
+    /* padding:20px; */
+    margin: 40px;
+    /* padding:40px; */
+    width:80%;
+    align-items: center;
+
+    /* border: 1px solid black; */
+}
+
+.table_lines {
+       /* color: rgb(255, 255, 255); */
+       color: rgb(3, 14, 118);
+       font-family: 'mono-spaced', sans-serif;
+
+       /* font-family: 'Roboto', sans-serif; */
+       font-size: 15px;
+       text-align:center;
+       align-items: center;
+              /* margin: 0; */
+       /* padding:0; */
+       /* padding:40px; */
+       /* margin: 20px; */
+}
+
+
+

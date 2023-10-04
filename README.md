@@ -1,2 +1,2 @@
-# DIFFAR
+# DiffAR
 Initial repository

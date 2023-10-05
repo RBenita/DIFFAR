@@ -6,12 +6,12 @@ color: rgb(123, 210, 222);
 font-family: 'Roboto', sans-serif;  } */
 @font-face {
     font-family: 'mono-spaced';
-    src: url('/Users/roibenita/Documents/second_degree/research/Github_files/GitIO/ttf_font_files/SpaceMono-Regular.woff') format('woff');
+    src: url('https://github.com/RBenita/DIFFAR/raw/main/docs/ttf_font_files/SpaceMono-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'halvetica';
-    src: url('/Users/roibenita/Documents/second_degree/research/Github_files/GitIO/ttf_font_files/Helvetica CE Narrow.woff') format('woff');
+    src: url('https://github.com/RBenita/DIFFAR/raw/main/docs/ttf_font_files/Helvetica%20CE%20Narrow.woff') format('woff');
 }
 
 html, body { 

@@ -95,6 +95,19 @@ text-align:left;
     margin: 40px;
 }
 
+.note {
+    /* color: rgb(255, 255, 255); */
+    color: rgb(3, 14, 118);
+    font-family: 'mono-spaced', sans-serif;
+
+    /* font-family: 'Roboto', sans-serif; */
+    font-size: 15px;
+    /* margin: 0; */
+    /* padding:0; */
+    /* padding:40px; */
+    margin: 40px;
+}
+
 .general_table {
     color: rgb(255, 255, 255);
     /* font-family: 'Roboto', sans-serif; */

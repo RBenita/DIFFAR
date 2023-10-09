@@ -7,3 +7,11 @@ Abstract: Diffusion models have recently been shown to be relevant for high-qual
 
 ### An HTML file summarizing representative examples is available here:
 [Open html](github_IO/index.html)
+
+## DataSets
+The supported datasets are
+
+LJSpeech: a single-speaker English dataset consists of 13100 short audio clips of a female speaker reading passages from 7 non-fiction books, approximately 24 hours in total.
+
+https://keithito.com/LJ-Speech-Dataset/
+

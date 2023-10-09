@@ -14,9 +14,40 @@ Abstract: Diffusion models have recently been shown to be relevant for high-qual
 
 
 ## DataSets ##
-Currently, The supported datasets is:
+Currently, The supported dataset is:
 
 LJSpeech: [GitHub Pages](https://keithito.com/LJ-Speech-Dataset/) a single-speaker English dataset consists of 13100 short audio clips of a female speaker reading passages from 7 non-fiction books, approximately 24 hours in total.
+
+## Preprocessing ##
+Before training your model, make sure to have the following .json files:
+1. _wav.json files:
+```
+- train_wav.json
+- val_wav.json
+```
+An example can be found here.
+You can generate these files by running:
+`python flder2json.py <wavs_directory> | <json_directory>`
+
+2. _TextGride.json files:
+```
+- train_TextGrid.json
+- val_TextGrid.json
+```
+An example can be found here.
+You can generate these files by running:
+`python flder2json_txt.py <Textgrid_directory> | <json_directory>`
+
+3. _Energy.json files:
+```
+- train_Energy.json
+- val_Energy.json
+```
+An example can be found here.
+You can generate these files by:
+a) Making folder with energy .npy  files using the function:  from_wav_file_to_npy_energy_file
+b) Run `python flder2json_npy.py <Energy_directory> | <json_directory>`
+
 
 
 ## Infernece ##

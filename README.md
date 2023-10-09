@@ -3,15 +3,58 @@
 Abstract: Diffusion models have recently been shown to be relevant for high-quality speech generation. Most work has been focused on generating spectrograms, and as such, they further require a subsequent model to convert the spectrogram to a waveform (i.e., a vocoder). This work proposes a diffusion probabilistic end-to-end model for generating a raw speech waveform. The proposed model is autoregressive, generating overlapping frames sequentially, where each frame is conditioned on a portion of the previously generated one. Hence, our model can effectively synthesize an unlimited speech duration while preserving high-fidelity synthesis and temporal coherence. We implemented the proposed model for unconditional and conditional speech generation, where the latter can be driven by an input sequence of phonemes, amplitudes, and pitch values. Working on the waveform directly has some empirical advantages. Specifically, it allows the creation of local acoustic behaviors, like vocal fry, which makes the overall waveform sounds more natural. Furthermore, the proposed diffusion model is stochastic and not deterministic; therefore, each inference generates a slightly different waveform variation, enabling abundance of valid realizations. Experiments show that the proposed model generates speech with superior quality compared with other state-of-the-art neural speech generation systems.
 
 
-### This repository is currently under construction. Currently, you can access synthesis examples in the "Examples" folder, and detailed code will be uploaded in the near future.
+### This repository is currently under construction. Currently, you can access synthesis examples in the "Examples" folder, and detailed code will be uploaded in the near future. ###
 
-### An HTML file summarizing representative examples is available here:
+### An HTML file summarizing representative examples is available here: ###
 [Open html](github_IO/index.html)
 
-## DataSets
-The supported datasets are
+## TODO
+- [] Inference Procedure for DiffAR 200
+- [] Training procedure for DiffAR 200
 
-LJSpeech: a single-speaker English dataset consists of 13100 short audio clips of a female speaker reading passages from 7 non-fiction books, approximately 24 hours in total.
 
-https://keithito.com/LJ-Speech-Dataset/
+## DataSets ##
+Currently, The supported datasets is:
+
+LJSpeech: [GitHub Pages](https://keithito.com/LJ-Speech-Dataset/) a single-speaker English dataset consists of 13100 short audio clips of a female speaker reading passages from 7 non-fiction books, approximately 24 hours in total.
+
+
+## Infernece ##
+To synthesize your custom .wav files: 
+1. Locate the .txt files under a folder named 'text_files' as follows:
+```
+|-- current_directory
+|   |-- text_files
+|   |   |-- file1.txt
+|   |   |-- file2.txt
+|   |   |-- file3.txt
+```
+   
+2. run `python inference_option_2_usin_overlap_zone_ver_2.py --main_directory <The current_directory>`
+
+A successful run should yield the following folder structure:
+
+```
+|-- current_directory
+|   |-- text_files
+|   |   |-- file1.txt
+|   |   |-- file2.txt
+|   |   |-- file3.txt
+|   |-- predicted_energy_files
+|   |   |-- file1.npy
+|   |   |-- file2.npy
+|   |   |-- file3.npy
+|   |-- predicted_TextGrid_files
+|   |   |-- file1.TextGrid
+|   |   |-- file2.TextGrid
+|   |   |-- file3.TextGrid
+|   |-- generated_wavs
+|   |   |-- file1.wav
+|   |   |-- file2.wav
+|   |   |-- file3.wav
+
+```
+
+
+
 

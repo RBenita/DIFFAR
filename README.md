@@ -30,7 +30,7 @@ To synthesize your custom .wav files:
 |   |   |-- file3.txt
 ```
    
-2. run `python inference_option_2_usin_overlap_zone_ver_2.py --main_directory <The current_directory>`
+2. run `python inference.py --main_directory <current_directory>`
 
 A successful run should yield the following folder structure:
 

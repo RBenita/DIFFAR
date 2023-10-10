@@ -1,0 +1,91 @@
+
+defaults:
+  - hydra/job_logging: colorlog
+  - hydra/hydra_logging: colorlog
+
+n_samples: 8000
+sample_rate: 16000
+#max_steps: 4
+max_steps: null
+batch_size_validation: 16
+batch_size_train: 32
+learning_rate: 2e-4
+max_grad_norm: null
+model_dir: "runs/git_tries/outputs"
+val_every_n_epochs: 5
+summery_every_n_epochs: 5
+num_workers: 4
+test: false
+seed: 1234
+
+residual_layers: 36
+residual_channels: 256
+dilation_cycle_length: 11
+noise_schedule:
+  start: 1e-4
+  stop: 0.02
+  num: 200
+
+n_mels: 80 # TODO
+fp16: false
+
+augment: []
+bandmask:
+  _target_: diffwave.augment.BandMask
+  maxwidth: 0.2
+  bands: 120
+  sample_rate: ${sample_rate}
+lowpass_filter:
+  _target_: diffwave.dsp.LowPassFilter
+  cutoff: 0.3
+
+features:
+
+
+train_ds:
+  _target_: audio.PairedAudioDataset
+  json_manifest_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted/train/all_data/train_wav.json"
+  json_manifest_TextGrids_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted_aligned/train/all_data/train_textgrid.json"
+  json_manifest_npy_Energy_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/energy_splitted_16000_no_powered/train/npy_train.json"
+ 
+  n_samples: ${n_samples}
+  min_duration: ${n_samples}
+
+
+valid_ds:
+  _target_: audio.PairedAudioDataset
+  json_manifest_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted/val/all_data/val_wav.json"
+  json_manifest_TextGrids_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted_aligned/val/all_data/val_textgrid.json"
+  json_manifest_npy_Energy_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/energy_splitted_16000_no_powered/val/npy_val.json"
+  
+  n_samples: ${n_samples}
+  min_duration: ${n_samples}
+
+
+test_ds:
+  _target_: audio.PairedAudioDataset
+  json_manifest_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted/test/all_data/test_wav.json"
+  json_manifest_TextGrids_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted_aligned/test/all_data/test_textgrid.json"
+  json_manifest_npy_Energy_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/energy_splitted_16000_no_powered/test/npy_test.json"
+  
+  n_samples: null
+  min_duration: 0
+
+Windows_length: 8000
+Frame_length: 4000
+
+ # text params
+total_phonemes: 73
+max_duration_phoneme: 101 # In case a frame is consist of single phoneme.
+
+replica_id_attempt: 10
+
+hydra:
+  run:
+    dir: ${model_dir}/exp_${hydra.job.override_dirname}
+  job:
+    config:
+      override_dirname:
+        kv_sep: '='
+        item_sep: ','
+        exclude_keys: ['train_ds.json_manifest_a', 'train_ds.json_manifest_b', 'valid_ds.json_manifest_a', 'valid_ds.json_manifest_b', 'test']

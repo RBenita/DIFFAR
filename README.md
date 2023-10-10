@@ -51,8 +51,8 @@ An example can be found [here](https://github.com/RBenita/DIFFAR/blob/main/Demo_
 
 
 You can generate these files by:
-a) Making folder with energy .npy  files using the function:  from_wav_file_to_npy_energy_file
-b) Run `python flder2json_npy.py <Energy_directory> | <json_directory>`
+   * Making folder with energy .npy  files using the function:  from_wav_file_to_npy_energy_file
+   * Run `python flder2json_npy.py <Energy_directory> | <json_directory>`
 
 
 

@@ -25,7 +25,8 @@ Before training your model, make sure to have the following .json files:
 - train_wav.json
 - val_wav.json
 ```
-An example can be found here.
+An example can be found [here]([github_IO/index.html](https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/DiffAR%2BP_LJ003-0228_0.wav))
+
 You can generate these files by running:
 `python flder2json.py <wavs_directory> | <json_directory>`
 

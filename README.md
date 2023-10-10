@@ -57,7 +57,13 @@ You can generate these files by:
 ## Training ##
 Our implementation is Using hydra.
 
-* Make sure to 
+* Make sure you have updated the [conf.yaml](https://github.com/RBenita/DIFFAR/blob/main/conf/conf.yaml) file correctly. Mainly pay attention to the pathes fields:
+  ```
+- train_ds
+- valid_ds
+```
+
+
 
 ## Infernece ##
 To synthesize your custom .wav files: 

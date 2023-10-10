@@ -25,7 +25,7 @@ Before training your model, make sure to have the following .json files:
 - train_wav.json
 - val_wav.json
 ```
-An example can be found [here]([https://github.com/RBenita/DIFFAR/blob/main/Demo_json_files/Demo_wav.json])
+An example can be found [here](https://github.com/RBenita/DIFFAR/blob/main/Demo_json_files/Demo_wav.json)
 
 You can generate these files by running:
 `python flder2json.py <wavs_directory> | <json_directory>`
@@ -35,7 +35,7 @@ You can generate these files by running:
 - train_TextGrid.json
 - val_TextGrid.json
 ```
-An example can be found [here]([https://github.com/RBenita/DIFFAR/blob/main/Demo_json_files/Demo_textgrid.json])
+An example can be found [here](https://github.com/RBenita/DIFFAR/blob/main/Demo_json_files/Demo_textgrid.json)
 You can generate these files by running:
 `python flder2json_txt.py <Textgrid_directory> | <json_directory>`
 
@@ -44,7 +44,7 @@ You can generate these files by running:
 - train_Energy.json
 - val_Energy.json
 ```
-An example can be found [here]([https://github.com/RBenita/DIFFAR/blob/main/Demo_json_files/Demo_npy_energy.json])
+An example can be found [here](https://github.com/RBenita/DIFFAR/blob/main/Demo_json_files/Demo_npy_energy.json)
 You can generate these files by:
 a) Making folder with energy .npy  files using the function:  from_wav_file_to_npy_energy_file
 b) Run `python flder2json_npy.py <Energy_directory> | <json_directory>`

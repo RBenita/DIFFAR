@@ -63,7 +63,11 @@ Our implementation is Using hydra.
 - valid_ds
 ```
 
-
+* run `__main__.py`
+```
+HYDRA_FULL_ERROR=1 python ./__main__.py
+```
+  
 
 ## Infernece ##
 To synthesize your custom .wav files: 

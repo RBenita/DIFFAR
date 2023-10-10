@@ -51,10 +51,13 @@ An example can be found [here](https://github.com/RBenita/DIFFAR/blob/main/Demo_
 
 
 You can generate these files by:
-   * Making folder with energy .npy  files using the function:  from_wav_file_to_npy_energy_file
+   * Make a folder with energy .npy  files using the function:  from_wav_file_to_npy_energy_file
    * Run `python flder2json_npy.py <Energy_directory> | <json_directory>`
 
+## Training ##
+Our implementation is Using hydra.
 
+* Make sure to 
 
 ## Infernece ##
 To synthesize your custom .wav files: 

@@ -44,9 +44,9 @@ features:
 
 train_ds:
   _target_: audio.PairedAudioDataset
-  json_manifest_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted/train/all_data/train_wav.json"
-  json_manifest_TextGrids_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted_aligned/train/all_data/train_textgrid.json"
-  json_manifest_npy_Energy_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/energy_splitted_16000_no_powered/train/npy_train.json"
+  json_wav: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted/train/all_data/train_wav.json"
+  json_TextGrids: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted_aligned/train/all_data/train_textgrid.json"
+  json_npy_Energy: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/energy_splitted_16000_no_powered/train/npy_train.json"
  
   n_samples: ${n_samples}
   min_duration: ${n_samples}
@@ -54,9 +54,9 @@ train_ds:
 
 valid_ds:
   _target_: audio.PairedAudioDataset
-  json_manifest_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted/val/all_data/val_wav.json"
-  json_manifest_TextGrids_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted_aligned/val/all_data/val_textgrid.json"
-  json_manifest_npy_Energy_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/energy_splitted_16000_no_powered/val/npy_val.json"
+  json_wav: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted/val/all_data/val_wav.json"
+  json_TextGrids: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted_aligned/val/all_data/val_textgrid.json"
+  json_npy_Energy: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/energy_splitted_16000_no_powered/val/npy_val.json"
   
   n_samples: ${n_samples}
   min_duration: ${n_samples}
@@ -64,9 +64,9 @@ valid_ds:
 
 test_ds:
   _target_: audio.PairedAudioDataset
-  json_manifest_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted/test/all_data/test_wav.json"
-  json_manifest_TextGrids_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted_aligned/test/all_data/test_textgrid.json"
-  json_manifest_npy_Energy_a: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/energy_splitted_16000_no_powered/test/npy_test.json"
+  json_wav: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted/test/all_data/test_wav.json"
+  json_TextGrids: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/wavs_16000_splitted_aligned/test/all_data/test_textgrid.json"
+  json_npy_Energy: "/home/data/rbenita/LJSpeech_Align/LJSpeech-1.1/energy_splitted_16000_no_powered/test/npy_test.json"
   
   n_samples: null
   min_duration: 0
@@ -88,4 +88,4 @@ hydra:
       override_dirname:
         kv_sep: '='
         item_sep: ','
-        exclude_keys: ['train_ds.json_manifest_a', 'train_ds.json_manifest_b', 'valid_ds.json_manifest_a', 'valid_ds.json_manifest_b', 'test']
+        exclude_keys: ['train_ds.json_wav', 'train_ds.json_manifest_b', 'valid_ds.json_wav', 'valid_ds.json_manifest_b', 'test']

@@ -44,7 +44,7 @@ You can generate these files by running:
 - train_Energy.json
 - val_Energy.json
 ```
-An example can be found here.
+An example can be found [here]([github_IO/index.html](https://github.com/RBenita/DIFFAR/blob/main/Examples/Ablation_study/DiffAR%2BP_LJ003-0228_0.wav))
 You can generate these files by:
 a) Making folder with energy .npy  files using the function:  from_wav_file_to_npy_energy_file
 b) Run `python flder2json_npy.py <Energy_directory> | <json_directory>`

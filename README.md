@@ -9,7 +9,7 @@ We provide a PyTorch implementation of our work.
 ### This repository is currently under construction. Currently, you can access synthesis examples in the "Examples" folder, and detailed code will be uploaded in the near future. ###
 
 ### An HTML file summarizing representative examples is available here: ###
-[Open html](github_IO/index.html)
+[Open html]([github_IO/index.html](https://github.com/RBenita/DIFFAR/blob/main/docs/index.html))
 
 ## TODO
 - [] Inference Procedure for DiffAR 200

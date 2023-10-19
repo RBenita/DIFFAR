@@ -11,7 +11,7 @@ batch_size_validation: 16
 batch_size_train: 32
 learning_rate: 2e-4
 max_grad_norm: null
-model_dir: "runs/git_tries/outputs"
+model_dir: "runs/DiffAR_200/outputs"
 val_every_n_epochs: 5
 summery_every_n_epochs: 5
 num_workers: 4

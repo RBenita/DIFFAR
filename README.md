@@ -6,14 +6,12 @@ Abstract: Diffusion models have recently been shown to be relevant for high-qual
 
 
 We provide a PyTorch implementation of our work.
-### This repository is currently under construction. Currently, you can access synthesis examples in the "Examples" folder, and detailed code will be uploaded in the near future. ###
+#### This repository is currently under construction. ####
 
-### An HTML file summarizing representative examples is available here: ###
+- synthesis examples are available in the "Examples" folder.
+- An HTML file summarizing representative examples is available here: 
 [Open html](https://github.com/RBenita/DIFFAR/blob/main/docs/index.html)
 
-## TODO
-- [] Inference Procedure for DiffAR 200
-- [] Training procedure for DiffAR 200
 
 
 ## DataSets ##
@@ -82,7 +80,8 @@ HYDRA_FULL_ERROR=1 python ./__main__.py
 
 ## Infernece ##
 To synthesize your custom .wav files: 
-1. Locate the .txt files under a folder named 'text_files' as follows:
+1. Make sure to have a pre-trained model: `./models/DiffAR_200.pt`
+2. Locate the .txt files under a folder named 'text_files' as follows:
 ```
 |-- current_directory
 |   |-- text_files
@@ -91,7 +90,7 @@ To synthesize your custom .wav files:
 |   |   |-- file3.txt
 ```
    
-2. run `python inference.py --main_directory <current_directory>`
+3. run `python inference.py --main_directory <current_directory>`
 
 A successful run should yield the following folder structure:
 
@@ -116,6 +115,11 @@ A successful run should yield the following folder structure:
 
 ```
 
-
+## TODO
+- [x] Training procedure for DiffAR 200
+- [x] Inference Procedure for DiffAR 200
+- [ ] Training and Infernce Procedure for DiffAR 1000
+- [ ] Training and Infernce Procedure for DiffAR-E
+- [ ] Training and Infernce Procedure for DiffAR+P
 
 

@@ -1,0 +1,56 @@
+train_data_csv: "/home/mlspeech/rbenita/PycharmProjects/energy_predictor_by_phonemes/csv_wavs_phonemes_duration/wav_files_phonemes_Duration_trainset.csv"
+train_energy_npy: "/home/mlspeech/rbenita/PycharmProjects/energy_predictor_by_phonemes/energy_npy_files/train_wavs_energy_no_powered_2.npy"
+
+valid_data_csv: "/home/mlspeech/rbenita/PycharmProjects/energy_predictor_by_phonemes/csv_wavs_phonemes_duration/wav_files_phonemes_Duration_valset.csv"
+valid_energy_npy: "/home/mlspeech/rbenita/PycharmProjects/energy_predictor_by_phonemes/energy_npy_files/val_wavs_energy_no_powered_2.npy"
+
+test_data_csv: "/home/mlspeech/rbenita/PycharmProjects/energy_predictor_by_phonemes/csv_wavs_phonemes_duration/wav_files_phonemes_Duration_testset.csv"
+test_energy_npy: "/home/mlspeech/rbenita/PycharmProjects/energy_predictor_by_phonemes/energy_npy_files/test_wavs_energy_no_powered_2.npy"
+
+n_tokens: 73
+batch_size: 32
+lr: 0.0001
+epochs: 10000
+model: "cnn"
+substring: ""
+## calculating energy for each 10ms seperatly without common parts.
+hop_len: 160
+frame_len: 160
+gamma_power: 3
+
+rnn:
+  _target_: energy_predictor.RnnPredictor
+  n_tokens: ${n_tokens}
+  emb_dim: 128
+  rnn_hidden: 128
+  output_dim: 1
+  dropout: 0
+  n_layers: 1
+
+optimizer:
+  _target_: torch.optim.Adam
+  lr: ${lr}
+  betas: [0.9, 0.98]
+  eps: 0.000000001
+  weight_decay: 0
+
+cnn:
+  _target_: energy_predictor.CnnPredictor
+  n_tokens: ${n_tokens}
+  emb_dim: 128
+  channels: 256
+  kernel: 7
+  output_dim: 1
+  dropout: 0.5
+  n_layers: 2
+
+hydra:
+  run:
+    dir: ./experiments/energy_predictor/${hydra.job.override_dirname}
+  job:
+    config:
+      # configuration for the ${hydra.job.override_dirname} runtime variable
+      override_dirname:
+        kv_sep: '='
+        item_sep: ','
+        exclude_keys: ['train_phonemes', 'train_duration', 'valid_phonemes', 'valid_duration']

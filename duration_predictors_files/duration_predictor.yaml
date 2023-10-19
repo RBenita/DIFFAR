@@ -1,0 +1,48 @@
+train_data_csv: "/home/mlspeech/rbenita/PycharmProjects/Duration_predictor/phonemes_Duration_sec_dividing_train.csv"
+valid_data_csv: "/home/mlspeech/rbenita/PycharmProjects/Duration_predictor/phonemes_Duration_sec_dividing_val.csv"
+test_data_csv: "/home/mlspeech/rbenita/PycharmProjects/Duration_predictor/TTS_attempts/9_4_23/first_attempt_less_Nones/phonemes_Duration_sec_dividing_generate_TTS_attempt.csv"
+test_data_csv_files_names: "/home/mlspeech/rbenita/PycharmProjects/Duration_predictor/TTS_attempts/9_4_23/first_attempt_less_Nones/phonemes_Duration_sec_dividing_generate_TTS_attempt_files_names.csv"
+n_tokens: 73
+batch_size: 32
+lr: 0.0001
+epochs: 10000
+model: "cnn"
+substring: ""
+
+rnn:
+  _target_: duration_predictor.RnnPredictor
+  n_tokens: ${n_tokens}
+  emb_dim: 128
+  rnn_hidden: 128
+  output_dim: 1
+  dropout: 0
+  n_layers: 1
+
+optimizer:
+  _target_: torch.optim.Adam
+  lr: ${lr}
+  betas: [0.9, 0.98]
+  eps: 0.000000001
+  weight_decay: 0
+
+cnn:
+  _target_: duration_predictor.CnnPredictor
+  n_tokens: ${n_tokens}
+  emb_dim: 128
+  channels: 256
+  kernel: 5
+  output_dim: 1
+  dropout: 0.5
+  n_layers: 1
+
+hydra:
+  run:
+    dir: ./experiments/duration_predictor/${hydra.job.override_dirname}
+
+  job:
+    config:
+      # configuration for the ${hydra.job.override_dirname} runtime variable
+      override_dirname:
+        kv_sep: '='
+        item_sep: ','
+        exclude_keys: ['train_phonemes', 'train_duration', 'valid_phonemes', 'valid_duration']

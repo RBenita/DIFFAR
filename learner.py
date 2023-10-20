@@ -109,7 +109,7 @@ class DiffARLearner:
         except FileNotFoundError:
             logger.info(f"training from scratch")
             return False
-### checking ###
+
     def train_epoch(self, dataset):
         self.model.train()
         epoch_loss = 0
@@ -123,7 +123,7 @@ class DiffARLearner:
         epoch_loss /= len(self.train_ds)
         epoch_loss = distrib.average([epoch_loss])[0]
         return epoch_loss
-### checking ###
+
     def eval_epoch(self, dataset):
         ### There is an option calculating pseq, stoi ###
         self.model.eval()
@@ -156,14 +156,12 @@ class DiffARLearner:
 
         return epoch_loss_val
 
-###checking ###
     def test(self):
         pesq, stoi = self.eval_epoch(self.test_ds)
         logger.info(f"test results:")
         logger.info(f"pesq = {pesq}")
         logger.info(f"stoi = {stoi}")
 
-### checking ###
     def train(self, max_steps=None):
         epoch = 0
         min_loss=100
@@ -198,7 +196,7 @@ class DiffARLearner:
                 return
 
             epoch += 1
-### checking ###
+
     def train_step(self, audio, audio_conditioner, phonemes_conditioner, Energy_conditioner):
         for param in self.model.parameters():
             param.grad = None
@@ -269,7 +267,6 @@ class DiffARLearner:
     #             audio = torch.clamp(audio, -1.0, 1.0)
     #     return audio
 
-### checking ###
     def valid_loss(self, audio, audio_conditioner, phonemes_conditioner, Energy_conditioner):
         device = audio.device
         with torch.no_grad():
@@ -307,7 +304,6 @@ class DiffARLearner:
     #     self.summary_writer.flush()
     #     print("finish audio aummery")
 
-###checking ###
     def log_dict(self, d):
         if self.is_master:
             for k, v in d.items():

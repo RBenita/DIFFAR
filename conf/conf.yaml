@@ -30,14 +30,14 @@ n_mels: 80 # TODO
 fp16: false
 
 augment: []
-bandmask:
-  _target_: diffwave.augment.BandMask
-  maxwidth: 0.2
-  bands: 120
-  sample_rate: ${sample_rate}
-lowpass_filter:
-  _target_: diffwave.dsp.LowPassFilter
-  cutoff: 0.3
+# bandmask:
+#   _target_: diffwave.augment.BandMask
+#   maxwidth: 0.2
+#   bands: 120
+#   sample_rate: ${sample_rate}
+# lowpass_filter:
+#   _target_: diffwave.dsp.LowPassFilter
+#   cutoff: 0.3
 
 features:
 

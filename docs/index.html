@@ -25,8 +25,28 @@
     </div>
 
     <div class = "body_div">
-        <p class = "Head_h2">Abstract: Diffusion models have recently been shown to be relevant for high-quality speech generation. Most work has been focused on generating spectrograms, and as such, they further require a subsequent model to convert the spectrogram to a waveform (i.e., a vocoder). This work proposes a diffusion probabilistic end-to-end model for generating a raw speech waveform. The proposed model is autoregressive, generating overlapping frames sequentially, where each frame is conditioned on a portion of the previously generated one. Hence, our model can effectively synthesize an unlimited speech duration while preserving high-fidelity synthesis and temporal coherence. We implemented the proposed model for unconditional and conditional speech generation, where the latter can be driven by an input sequence of phonemes, amplitudes, and pitch values. Working on the waveform directly has some empirical advantages. Specifically, it allows the creation of local acoustic behaviors, like vocal fry, which makes the overall waveform sounds more natural. Furthermore, the proposed diffusion model is stochastic and not deterministic; therefore, each inference generates a slightly different waveform variation, enabling abundance of valid realizations. Experiments show that the proposed model generates speech with superior quality compared with other state-of-the-art neural speech generation systems.
+
+        <p class = "Head_h2"> <b> Authors: </b> <br>
+            &nbsp;&nbsp;Roi Benita<sup>[1]</sup> - roibenita@campus.technion.ac.il <br>
+            &nbsp;&nbsp;Michael Elad<sup>[1],[2]</sup> <br>
+            &nbsp;&nbsp;Joseph Keshet<sup>[1]</sup> <br><br>
+            Technion - Israel Institute of Technology, Haifa, Israel <br>
+            <sup>[1]</sup>Department of Electrical and Computer Engineering <br>
+            <sup>[2]</sup>Department of Computer Science 
         </p> 
+
+        <p class = "Head_h2"> <b> Abstract: </b> Diffusion models have recently been shown to be relevant for high-quality speech generation. Most work has been focused on generating spectrograms, and as such, they further require a subsequent model to convert the spectrogram to a waveform (i.e., a vocoder). This work proposes a diffusion probabilistic end-to-end model for generating a raw speech waveform. The proposed model is autoregressive, generating overlapping frames sequentially, where each frame is conditioned on a portion of the previously generated one. Hence, our model can effectively synthesize an unlimited speech duration while preserving high-fidelity synthesis and temporal coherence. We implemented the proposed model for unconditional and conditional speech generation, where the latter can be driven by an input sequence of phonemes, amplitudes, and pitch values. Working on the waveform directly has some empirical advantages. Specifically, it allows the creation of local acoustic behaviors, like vocal fry, which makes the overall waveform sounds more natural. Furthermore, the proposed diffusion model is stochastic and not deterministic; therefore, each inference generates a slightly different waveform variation, enabling abundance of valid realizations. Experiments show that the proposed model generates speech with superior quality compared with other state-of-the-art neural speech generation systems.
+        </p>
+
+        <p class = "Head_h2"> <b> Official open-sourced implementation: </b> <a href="https://github.com/RBenita/DIFFAR">Github repository</a>  <br>
+          
+        <b> Accepted for publication at ICLR 2024 </b> 
+            <a href="https://openreview.net/forum?id=GTk0AdOYLq&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2024%2FConference%2FAuthors%23your-submissions)">
+                OpenReview</a>  <br>
+          
+        </p> 
+        
+
                 <!-- ###############Unconditional generation################ -->
 
         <h3 class = "Body_h3"> <u><b>Unconditional generation </b></u></h3>

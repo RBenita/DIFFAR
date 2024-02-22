@@ -86,11 +86,26 @@ text-align:left;
 
 .Body_h3 {
     /* color: rgb(255, 255, 255); */
+    /* color: rgb(118, 3, 20); */
+
     color: rgb(3, 14, 118);
     font-family: 'mono-spaced', sans-serif;
 
     /* font-family: 'Roboto', sans-serif; */
     font-size: 20px;
+    /* margin: 0; */
+    /* padding:0; */
+    /* padding:40px; */
+    margin: 40px;
+}
+
+.Body_h4 {
+    /* color: rgb(255, 255, 255); */
+    color: rgb(3, 14, 118);
+    font-family: 'mono-spaced', sans-serif;
+
+    /* font-family: 'Roboto', sans-serif; */
+    font-size: 15px;
     /* margin: 0; */
     /* padding:0; */
     /* padding:40px; */

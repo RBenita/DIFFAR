@@ -4,6 +4,7 @@ Abstract: Diffusion models have recently been shown to be relevant for high-qual
 
 <img src="https://github.com/RBenita/DIFFAR/blob/main/docs/frame_explain_2.png?raw=true" width="300" height="200" align=right>
 
+Visit our [demo page](https://rbenita.github.io/DIFFAR/) for audio samples.
 
 We provide a PyTorch implementation of our work.
 #### This repository is currently under construction. ####
